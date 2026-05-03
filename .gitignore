@@ -37,7 +37,6 @@ build/
 *.jpeg
 *.png
 *.gif
-data/
 datasets/
 
 # Logs & outputs
