@@ -112,7 +112,6 @@ with PoseLandmarker.create_from_options(options) as landmarker:
             left_angles.append(angle_left_knee)
             right_angles.append(angle_right_knee)
 
-            #here we count the number of frames 
             cv2.putText(frame,f"Frames;{len(left_angles)}",(10,30),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,0),2)
 
         cv2.imshow("Pose", frame)
@@ -128,12 +127,12 @@ with PoseLandmarker.create_from_options(options) as landmarker:
                 recording = False
                 all_reps.append(current_rep)
                 print(f"Rep saved. Total reps recorded:{len(all_reps)}")
-                
+
 
 import json
 with open('data/sample_reps.json', 'w') as f:
     json.dump(all_reps, f)
-print(f"Saved {len(all_reps)} reps to data/sample_reps.json")                        
+print(f"Saved {len(all_reps)} reps to data/sample_reps.json")
 
 cap.release()
 cv2.destroyAllWindows()
